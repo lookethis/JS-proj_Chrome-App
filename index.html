@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="greetings.js" defer></script>
-    <script src="clock.js" defer></script>
+    <script src="JS/greetings.js" defer></script>
+    <script src="JS/clock.js" defer></script>
+    <script src="JS/quotes.js" defer></script>
+    <script src="JS/background.js" defer></script>
+    <script src="JS/todo.js" defer></script>
   </head>
   <body>
     <form id="login-form">
@@ -20,9 +23,18 @@
       <button>LogIn</button>
     </form>
 
-    <h1 id="greeting" class="hidden">00:00</h1>
-    <h2 id="clock"></h2>
+    <form id="todo-form">
+      <input type="text" placeholder="Write a To Do" required />
+    </form>
 
-    <a href="https://www.naver.com/">Go</a>
+    <ul id="todo-list"></ul>
+
+    <h1 id="greeting" class="hidden"></h1>
+    <h2 id="clock">00:00:00</h2>
+
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
   </body>
 </html>
