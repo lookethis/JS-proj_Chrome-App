@@ -1,10 +1,11 @@
-const toDoForm = document.querySelector("#todo-form");
+const toDoform = document.querySelector("#todo-form");
 const toDoInput = document.querySelector("#todo-form input");
-const toDoList = document.querySelector("#todo-list");
 
 const TODOS_KEY = "todos";
 
 let toDos = [];
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
 
 // toDos저장
 function saveToDos() {
@@ -20,11 +21,13 @@ function deleteToDo(event) {
 }
 
 // todo입력한 값을 리스트로 나열하여 보여준다
-function paintToDo(newTodo) {
+function paintToDo(newTodoObj) {
   const li = document.createElement("li");
-  li.id = newTodo.id;
+  li.id = newTodoObj.id;
+
   const span = document.createElement("span");
-  span.innerText = newTodo.text;
+  span.innerText = newTodoObj.text;
+
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteToDo);
@@ -52,11 +55,9 @@ function handleToDoSubmit(event) {
   saveToDos();
 }
 
-toDoForm.addEventListener("submit", handleToDoSubmit);
+toDoform.addEventListener("submit", handleToDoSubmit);
 
 // localstorage에 저장된 TODOS_KEY가져오기
-const savedToDos = localStorage.getItem(TODOS_KEY);
-console.log(savedToDos);
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);

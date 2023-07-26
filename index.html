@@ -4,43 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum</title>
+    <script
+      src="https://kit.fontawesome.com/6247a991a3.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <script src="JS/greetings.js" defer></script>
     <script src="JS/clock.js" defer></script>
     <script src="JS/quotes.js" defer></script>
     <script src="JS/background.js" defer></script>
     <script src="JS/todo.js" defer></script>
+    <script src="JS/reset.js" defer></script>
     <script type="module" src="JS/weather.js" defer></script>
   </head>
   <body>
-    <form id="login-form">
-      <!-- input태그는 form 안에 -->
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <button>LogIn</button>
-    </form>
+    <aside id="reset">
+      <i class="fas fa-sign-out-alt fa-lg"></i>
+      <span>Reset</span>
+    </aside>
 
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do" required />
-    </form>
+    <main id="todo">
+      <h1 id="clock">00:00</h1>
+      <h2 class="hidden" id="greeting"></h2>
 
-    <ul id="todo-list"></ul>
+      <form class="hidden" id="login-form">
+        <!-- input태그는 form 안에 -->
+        <h3 id="loginGuide">Please write your name</h3>
+        <input type="text" maxlength="15" autofocus required />
+      </form>
 
-    <h1 id="greeting" class="hidden"></h1>
-    <h2 id="clock">00:00:00</h2>
+      <form class="hidden" id="todo-form">
+        <h3 id="toDoGuide">Please write your task</h3>
+        <input type="text" required />
+      </form>
 
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
+      <ul class="hidden" id="todo-list"></ul>
+    </main>
 
-    <div id="weather">
-      <span> </span>
-      <span></span>
-    </div>
+    <footer>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+    </footer>
+
+    <ul id="weather">
+      <li>
+        <span></span>
+      </li>
+      <li>
+        <span></span>
+      </li>
+    </ul>
   </body>
 </html>
